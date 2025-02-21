@@ -8,7 +8,8 @@ const rl=readline.createInterface({
 
 const todo=[]
 const showMen=()=>{
-  console.log('\n 1:Add a Task') 
+  console.log('\n 1:Add a Task')
+
   console.log(' 2: view Tasks')
   console.log(' 3: Exit')
   rl.question('Choose an options:', handleInput)
@@ -19,7 +20,7 @@ const handleInput=(option)=>{
       todo.push(task)
       console.log("Task added: ",task);
       showMen()
-    })
+    })       
   }
  else if(option==='2'){
     console.log("\n Your Todo Lists");
