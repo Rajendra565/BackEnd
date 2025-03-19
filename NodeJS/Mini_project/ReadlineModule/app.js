@@ -1,4 +1,3 @@
-
 import readline from 'readline'
 
 const rl=readline.createInterface({
@@ -12,6 +11,7 @@ const showMen=()=>{
 
   console.log(' 2: view Tasks')
   console.log(' 3: Exit')
+  console.log(' 4: close')
   rl.question('Choose an options:', handleInput)
 }
 const handleInput=(option)=>{
@@ -35,6 +35,10 @@ const handleInput=(option)=>{
     
   }
   else if(option==='3'){
+    console.log("see you again")
+    rl.close()
+  }
+  else if(option==='4'){
     console.log("Good byee see you again")
     rl.close()
 

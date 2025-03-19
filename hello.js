@@ -3,4 +3,3 @@ arr[10]=10
 
 console.log(arr[9]=4)
 
-
