@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* Notes on "How to use" at the end of code */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap");
+
+/* CSS RESET */
+* { box-sizing: border-box; }
+
+body { padding: 0; margin: 0; font-family: "Inter", sans-serif;  overflow-x: hidden; background-color: #080202; color: #fff; width: 70%; margin: 0 auto; }
+
+h1, h2, h3, h4, h5, h6, p, hr { margin: 0; padding: 0; }
+p { margin: 20px 0; font-size: 16px; line-height: 2; font-weight: 200; }
+img { display: block; padding: 0; margin: 0; }
+
+/* >>> FAQ STYLES <<< */
+.faq_container { border-bottom: 2px solid #ddd; }
+.faq_question {
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.answercont {
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.3s;
+}
+.answer {
+  padding: 0 10px 20px;
+  line-height: 1.5rem;
+}
+.fqa_headline_container h2 span { font-weight: 700; }
+.faq_question-text h3 { font-size: 22px; }
+
+.icon.active {
+  background: transparent;
+  border: 2px solid #fff;
+}
+.icon:hover { cursor: pointer; }
+.icon-shape { position: relative; width: 50px; height: 50px; }
+.icon .icon-shape::before {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 4px;
+  background: #fff;
+  border-radius: 3px;
+  transition: all 0.5s ease;
+}
+.icon .icon-shape::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 4px;
+  height: 30px;
+  background: #fff;
+  border-radius: 3px;
+  transition: all 0.5s ease;
+}
+.icon .icon-shape.active::before {
+  transform: translate(-50%, -50%) rotate(180deg);
+  transition: all 0.5s ease;
+}
+.icon .icon-shape.active::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+  transition: all 0.5s ease;
+}
+
+/* ===> SOME SUGGESTIONS ON USING THE CODE <=== */
+/* There are 2 Main containers in a single FAQ Container - faq_question & answercont */
+/* You can make a div inside these container to add content and styling purposes */
+  </style>
+</head>
+<body>
+  <div class="faq_main_container">
+    <div class="faq_container">
+      <div class="faq_question">
+        <div class="faq_question-text">
+          <h3>How do I place an order?</h3>
+        </div>
+        <div class="icon">
+          <div class="icon-shape"></div>
+        </div>
+      </div>
+      <div class="answercont">
+        <div class="answer">
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum
+            ipsam odio voluptates ab quae beatae nihil illo alias vitae minima
+            cumque atque, deleniti quos animi nostrum, veritatis quisquam
+            ullam ducimus laboriosam reprehenderit sapiente, quo
+            necessitatibus dolorem. Impedit sed, similique corporis quo totam,
+            veniam consequatur blanditiis, voluptates ipsa eligendi excepturi
+            incidunt facilis ex tempore? Ut vero voluptatum quis doloremque
+            accusantium saepe.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="faq_container">
+      <div class="faq_question">
+        <div class="faq_question-text">
+          <h3>What payment methods do you accept?</h3>
+        </div>
+        <div class="icon">
+          <div class="icon-shape"></div>
+        </div>
+      </div>
+      <div class="answercont">
+        <div class="answer">
+          <p>
+            We accept a variety of payment methods, including credit/debit cards (Visa, MasterCard, American Express), PayPal, and bank transfers. Choose the option that suits you best during the checkout process.</p>
+        </div>
+      </div>
+    </div>
+    <div class="faq_container">
+      <div class="faq_question">
+        <div class="faq_question-text">
+          <h3>Can I modify or cancel my order after placing it?</h3>
+        </div>
+        <div class="icon">
+          <div class="icon-shape"></div>
+        </div>
+      </div>
+      <div class="answercont">
+        <div class="answer">
+          <p>
+            Unfortunately, once an order is placed, it cannot be modified or canceled. Please double-check your order before confirming the purchase.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="faq_container">
+      <div class="faq_question">
+        <div class="faq_question-text">
+          <h3>How can I track my order?</h3>
+        </div>
+        <div class="icon">
+          <div class="icon-shape"></div>
+        </div>
+      </div>
+      <div class="answercont">
+        <div class="answer">
+          <p>
+            Once your order is shipped, you will receive a confirmation email with a tracking number. You can use this number to track the delivery status of your package on our website or the courier's site.</p>
+        </div>
+      </div>
+    </div>
+    <div class="faq_container">
+      <div class="faq_question">
+        <div class="faq_question-text">
+          <h3>What is your return policy?</h3>
+        </div>
+        <div class="icon">
+          <div class="icon-shape"></div>
+        </div>
+      </div>
+      <div class="answercont">
+        <div class="answer">
+          <p>
+            We have a 30-day return policy. If you're not satisfied with your purchase, you can return the item within 30 days of receiving it for a full refund. Please review our Returns & Exchanges page for detailed instructions.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a href="/"><button>home page</button></a>
+
+  <script>
+    let questions = document.querySelectorAll(".faq_question");
+
+      questions.forEach((question) => {
+        let icon = question.querySelector(".icon-shape");
+
+        question.addEventListener("click", (event) => {
+          const active = document.querySelector(".faq_question.active");
+          const activeIcon = document.querySelector(".icon-shape.active");
+
+          if (active && active !== question) {
+            active.classList.toggle("active");
+            activeIcon.classList.toggle("active");
+            active.nextElementSibling.style.maxHeight = 0;
+          }
+
+          question.classList.toggle("active");
+          icon.classList.toggle("active");
+
+          const answer = question.nextElementSibling;
+
+          if (question.classList.contains("active")) {
+            answer.style.maxHeight = answer.scrollHeight + "px";
+          } else {
+            answer.style.maxHeight = 0;
+          }
+        });
+      });
+  </script>
+  
+</body>
+</html>
