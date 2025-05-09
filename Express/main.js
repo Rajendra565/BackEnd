@@ -10,6 +10,9 @@ res.render('index',{age:12})
 app.get('/about',(req,res)=>{
 res.render('about',{age:12})
 });
+app.get('/one',(req,res)=>{
+res.render('one',{age:12})
+});
 app.get('/contact',(req,res)=>{
 res.render('contact',{age:12})
 });
