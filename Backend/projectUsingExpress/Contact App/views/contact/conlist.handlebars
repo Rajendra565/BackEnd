@@ -1,0 +1,32 @@
+<div class="" style=""></div>
+  <h1 style="margin-bottom: 30px; font-size: 32px; color: #2c3e50;">Contact List</h1>
+
+  <div class="all-card"  style=" display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+
+    {{#each payload}}
+    <div class="contact-card" style="background-color: #fff; padding: 20px; border-radius: 12px; box-shadow: width:100vw; 0 6px 12px rgba(0, 0, 0, 0.1); transition: transform 0.2s;">
+      <ul style="list-style: none; text-align: left; margin-bottom: 15px;">
+        <li style="margin-bottom: 8px; font-size: 16px; color: #333;"><strong>First Name:</strong> {{this.fname}}</li>
+        <li style="margin-bottom: 8px; font-size: 16px; color: #333;"><strong>Last Name:</strong> {{this.lname}}</li>
+        <li style="margin-bottom: 8px; font-size: 16px; color: #333;"><strong>Phone Number:</strong> {{this.phno}}</li>
+        <li style="margin-bottom: 8px; font-size: 16px; color: #333;"><strong>Saved Loc:</strong> {{this.loc}}</li>
+      </ul>
+
+      <div class="allButton" style="display: flex; justify-content: space-between;">
+        <a href="/api/{{this._id}}" style="display: inline-block; padding: 8px 12px; border-radius: 6px; background-color: #2980b9; color: white; text-decoration: none; font-size: 16px;">
+          <i class="fa-solid fa-info"></i>
+        </a>
+        <a href="/api/edit/{{this._id}}" style="display: inline-block; padding: 8px 12px; border-radius: 6px; background-color: #f39c12; color: white; text-decoration: none; font-size: 16px;">
+          <i class="fa-solid fa-pen-to-square"></i>
+        </a>
+        <a href="/api/delete/{{this._id}}" style="display: inline-block; padding: 8px 12px; border-radius: 6px; background-color: #e74c3c; color: white; text-decoration: none; font-size: 16px;">
+          <i class="fa-solid fa-trash"></i>
+        </a>
+      </div>
+    </div>
+    {{else}}
+    <h1 style="margin-top: 50px; color: red; font-weight: bold;">Bloody fool, first create a contact.</h1>
+    {{/each}}
+
+  </div>
+
